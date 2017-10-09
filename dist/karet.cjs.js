@@ -75,6 +75,7 @@ var FromKefir = /*#__PURE__*/infestines.inherit(function FromKefir(props) {
         }
       };
       this.callback = callback;
+      console.log('karet subscribing');
       observable.onAny(callback);
     } else {
       this.rendered = observable || null;
@@ -207,6 +208,7 @@ function offAny(handlers, obs) {
   if (handler) obs.offAny(handler);
 }
 function onAny1(handlers, obs) {
+  console.log('karet subscribing');
   obs.onAny(handlers);
 }
 function onAny(self, obs) {
@@ -240,6 +242,7 @@ function onAny(self, obs) {
     }
   };
   self.handlers.push(handler);
+  console.log('karet subscribing');
   obs.onAny(handler);
 }
 
